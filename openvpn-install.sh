@@ -215,7 +215,7 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	cd /etc/openvpn/server/easy-rsa/
 	# Create the PKI, set up the CA and create TLS key
 	./easyrsa --batch init-pki
-	./easyrsa --batch build-ca nopass
+	./easyrsa --batch --days=36500 build-ca nopass
 	./easyrsa gen-tls-crypt-key
 	# Create the DH parameters file using the predefined ffdhe2048 group
 	echo '-----BEGIN DH PARAMETERS-----
