@@ -229,9 +229,9 @@ ssbzSibBsu/6iGtCOGEoXJf//////////wIBAg==
 	# Make easy-rsa aware of our external DH file (prevents a warning)
 	ln -s /etc/openvpn/server/dh.pem pki/dh.pem
 	# Create certificates and CRL
-	./easyrsa --batch --days=3650 build-server-full server nopass
-	./easyrsa --batch --days=3650 build-client-full "$client" nopass
-	./easyrsa --batch --days=3650 gen-crl
+	./easyrsa --batch --days=36500 build-server-full server nopass
+	./easyrsa --batch --days=36500 build-client-full "$client" nopass
+	./easyrsa --batch --days=36500 gen-crl
 	# Move the stuff we need
 	cp pki/ca.crt pki/private/ca.key pki/issued/server.crt pki/private/server.key pki/crl.pem /etc/openvpn/server
 	cp pki/private/easyrsa-tls.key /etc/openvpn/server/tc.key
